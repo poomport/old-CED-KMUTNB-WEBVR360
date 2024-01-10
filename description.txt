@@ -14,7 +14,7 @@ TTSMAKER : https://ttsmaker.com/th
 Insta360 : https://www.insta360.com/
 html design : https://html.design/
 --------------------------------------------------------------------
-Note : Update Version web 09/01/2024
+Note : Update Version web 11/01/2024
 --------------------------------------------------------------------
 This website aims to introduce the Department of Computer Education at the Industrial Education College of KING MONGKUT'S UNIVERSITY OF TECHNOLOGY NORTH BANGKOK. 
 Not intended to use for commercial use.
