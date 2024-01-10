@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>อาคาร44</title>
+    <link rel="stylesheet" href="../stylebutton1.css">
+    <link rel="stylesheet" href="style44.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+    <style>
+        body {
+            font-family: "Trirong", serif;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Modal content -->
+    <div id="modal" class="modal">
+        <h2 style="color: #EEF296;">แจ้งเตือน</h2>
+        <p>คุณต้องการเลือกไปชั้น7 ใช่หรือไม่?</p><br />
+        <button style="background-color: #9ADE7B;" role="button" onclick="goTo44l7Page()">Yes</button>
+        <button style="background-color: #ff5f57;" role="button" onclick="closeModal()">No</button>
+    </div>
+    <button class="button-67" role="button" onclick="goToBackPage()"><i
+            class="fa-solid fa-arrow-left fa-xl"></i></button>
+    <img class="imglogo" src="../img/44level.png" />
+    <div class="cards-list">
+        <div class="card 1" onclick="cardClicked(1)">
+            <div class="card_image"> <img src="../img/don'tuse.jpg" /> </div>
+            <div class="card_title title-white">
+                <p>1</p>
+            </div>
+        </div>
+
+        <div class="card 2" onclick="cardClicked(2)">
+            <div class="card_image">
+                <img src="../img/don'tuse.jpg" />
+            </div>
+            <div class="card_title title-white">
+                <p>2</p>
+            </div>
+        </div>
+
+        <div class="card 3" onclick="cardClicked(3)">
+            <div class="card_image">
+                <img src="../img/don'tuse.jpg" />
+            </div>
+            <div class="card_title title-white">
+                <p>3</p>
+            </div>
+        </div>
+        <div class="card 4" onclick="cardClicked(4)">
+            <div class="card_image">
+                <img src="../img/don'tuse.jpg" />
+            </div>
+            <div class="card_title title-white">
+                <p>4</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="cards-list">
+
+        <div class="card 5" onclick="cardClicked(5)">
+            <div class="card_image">
+                <img src="../img/don'tuse.jpg" />
+            </div>
+            <div class="card_title title-white">
+                <p>5</p>
+            </div>
+        </div>
+        <div class="card 6" onclick="cardClicked(6)">
+            <div class="card_image">
+                <img src="../img/don'tuse.jpg" />
+            </div>
+            <div class="card_title title-white">
+                <p>6</p>
+            </div>
+        </div>
+        <div class="card 7" onclick="openModal()">
+            <div class="card_image">
+                <img src="../img/use.jpg" />
+            </div>
+            <div class="card_title title-white">
+                <p>7</p>
+            </div>
+        </div>
+        <div class="card 8" onclick="cardClicked(8)">
+            <div class="card_image">
+                <img src="../img/don'tuse.jpg" />
+            </div>
+            <div class="card_title title-white">
+                <p>8</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function openModal() {
+            // Display the modal
+            document.getElementById('modal').style.display = 'block';
+        }
+
+        function closeModal() {
+            // Hide the modal
+            document.getElementById('modal').style.display = 'none';
+        }
+
+        function goTo44l7Page() {
+            // Change the URL to the desired new page
+            window.location.href = '../44level7/index.html';
+        }
+        function goToBackPage() {
+            // Change the URL to the desired new page
+            window.location.href = '../menu.html';
+        }
+
+        function cardClicked(cardNumber) {
+            alert('Error!!! คุณเลือกชั้นที่' + cardNumber + 'ซึ่งไม่ได้ใช้งาน โปรดเลือกเฉพาะชั้นที่มีสถานะเป็นUse');
+        }
+
+    </script>
+
+</body>
+
+</html>

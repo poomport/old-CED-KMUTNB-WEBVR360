@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="stylebutton1.css">
+    <link rel="stylesheet" href="stylecharacter.css">
+    <title>แนะนำ</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+    <style>
+        body {
+            font-family: "Trirong", serif;
+        }
+
+        img {
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body style="margin: 0; padding: 0;">
+    <button class="button-65" role="button" onclick="goToBackPage()"><i class="fa-solid fa-house fa-xl"></i></button>
+    <div class="container centerall">
+        <img id="characterImage" src="img/character.png" alt="Character Image">
+        <div id="scene">
+            <div id="dialogue">
+                <!-- Add a span element for the typed text -->
+                <p id="chapterText"><span id="typedText">ยินดีต้อนรับสู่ภาคคอมพิวเตอร์ศึกษา<br />
+                        คณะครุศาสตร์อุตสาหกรรม<br />
+                        มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือของเรา!</span>
+                </p>
+                <button id="skipButton" onclick="skipToNextChapter()">Next <i
+                        class="fa-solid fa-arrow-right"></i></button>
+                <button id="jumpButton" onclick="jumpToAnotherWebsite()">Skip <i
+                        class="fa-solid fa-forward"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var currentChapter = 1;
+        var chapters = [
+            "ยินดีต้อนรับสู่ภาคคอมพิวเตอร์ศึกษา คณะครุศาสตร์อุตสาหกรรม มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือของเรา!",
+            "มาสำรวจโลกเสมือนผ่านอาคาร VR360 ของเรากันเถอะ",
+            "ในเว็บนี้จะประกอบไปด้วยภาพอาคาร 360 ที่จะพาทุกท่านไปเยี่ยมชม",
+            "ผ่าน WebVRนี้ และมีContent สำหรับแนะนำภาควิชาของเรา",
+            "เพื่อไม่เสียเวลาไปเริ่มไปลุยกันโลด!!!"
+        ];
+
+        function skipToNextChapter() {
+            currentChapter++;
+
+            if (currentChapter <= chapters.length) {
+                // Update the typed text using the typing animation
+                typeMessage(chapters[currentChapter - 1], function () {
+                    // After typing animation is complete, enable the next button
+                    document.getElementById('skipButton').disabled = false;
+                });
+            } else {
+                // Handle end of chapters, e.g., redirect to another page
+                window.location.href = 'menu.html';
+            }
+
+            // Disable the next button temporarily to prevent rapid clicking
+            document.getElementById('skipButton').disabled = true;
+        }
+
+        function jumpToAnotherWebsite() {
+            // Replace 'https://example.com' with the desired website URL
+            window.location.href = 'menu.html';
+        }
+
+        function typeMessage(message, callback) {
+            var typedTextElement = document.getElementById('typedText');
+            typedTextElement.innerHTML = ''; // Clear existing text
+            var index = 0;
+
+            function type() {
+                if (index < message.length) {
+                    typedTextElement.innerHTML += message.charAt(index);
+                    index++;
+                    setTimeout(type, 50); // Adjust the typing speed (milliseconds)
+                } else {
+                    // Call the callback function after typing is complete
+                    if (callback) {
+                        callback();
+                    }
+                }
+            }
+
+            type();
+        }
+
+        function goToBackPage() {
+            // Change the URL to the desired new page
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+
+</html>

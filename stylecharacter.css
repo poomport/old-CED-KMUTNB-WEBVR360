@@ -1,0 +1,130 @@
+body {
+    background-image: url('./images/banner.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+#scene {
+    width: 80%;
+    background-color: rgba(163, 211, 230);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#dialogue {
+    margin-top: 20px;
+}
+
+#characterImage {
+    width: 70%;
+    border-radius: 8px;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+#skipButton,
+#jumpButton {
+    cursor: pointer;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+#skipButton {
+    background-color: #29A745;
+    color: white;
+}
+
+#jumpButton {
+    background-color: #E74C3C;
+    color: white;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+#chapterText {
+    font-size: 16px;
+    line-height: 1.5;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 3s steps(40) 1s forwards;
+}
+
+@media only screen and (max-width: 1366px) {
+    #scene {
+        width: 90%;
+    }
+
+}
+
+@media only screen and (max-width: 1024px) {
+    #scene {
+        width: 70%;
+    }
+
+    #characterImage {
+        margin-right: 10px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #scene {
+        width: 70%;
+    }
+
+    #characterImage {
+        margin-right: 0;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    #characterImage {
+        width: 100%;
+
+        margin-right: 0;
+    }
+
+    #scene {
+        width: 70%;
+    }
+
+    #skipButton,
+    #jumpButton {
+        width: 100%;
+    }
+}
+
+/* Styles for devices with screen size 8 inches and larger */
+@media only screen and (max-width: 8in) {
+    .centerall {
+        margin-top: 100px;
+    }
+
+    #chapterText {
+        font-size: 12.5px;
+    }
+
+}
+
+/* Styles for devices with screen size 8 inches and larger */
+@media only screen and (min-width: 8in) {
+    .centerall {
+        margin-top: 80px;
+    }
+}
